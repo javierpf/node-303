@@ -3,12 +3,12 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const config = require('../../config');
 
-const username = config.get('database:user');
-const password = config.get('database:password');
-const dbName = config.get('database:dbName');
+const username = config.get('development:username');
+const password = config.get('development:password');
+const dbName = config.get('development:database');
 const options = {
   dialect: 'postgres',
-  port: config.get('database:port'),
+  port: 5432,
 };
 const client = new Sequelize(dbName, username, password, options);
 const models = {};

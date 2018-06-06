@@ -3,8 +3,8 @@ const nconf = require('nconf');
 nconf
   .argv()
   .env()
-  .file({ file: `${__dirname}/appconfig.json` });
+  .file({ file: `${__dirname}/config.json` });
 
-nconf.required(['database', 'server']);
+nconf.required(['development']);
 
 module.exports = nconf;

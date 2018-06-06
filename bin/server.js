@@ -3,10 +3,9 @@
 const app = require('../app');
 // const debug = require('debug')('node-303:server');
 const http = require('http');
-const config = require('../config');
 const sequelize = require('../data/sequelize');
 
-const port = config.get('server:port');
+const port = 3000;
 app.set('port', port);
 
 const server = http.createServer(app);
