@@ -1,24 +1,18 @@
-const sequelize = require("../data/sequelize");
+const sequelize = require('../data/sequelize');
 
-exports.getBooks = () => {
-  return sequelize.models.Book.findAll();
-};
+exports.getBooks = () => sequelize.models.Book.findAll();
 
-exports.getBook = id => {
-  return sequelize.models.Book.findById(id);
-};
+exports.getBook = id => (sequelize.models.Book.findById(id));
 
-exports.saveBook = book => {
-  return sequelize.models.Book.create(book);
-};
+exports.saveBook = book => (sequelize.models.Book.create(book));
 
 exports.updateBook = async (id, book) => {
   const persisted = await sequelize.models.Book.findById(id);
-  Object.keys(book).forEach(key => (persisted[key] = book[key]));
+  Object.keys(book).forEach((key) => { (persisted[key] = book[key]); });
   return persisted.save();
 };
 
-exports.removeBook = async id => {
+exports.removeBook = async (id) => {
   const persisted = await sequelize.models.Book.findById(id);
   return persisted.destroy();
 };
