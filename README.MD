@@ -23,6 +23,7 @@ Modify config.js according to local database
     "dialect": "postgres"
   }
 }
-Deploy application for the first time, it will create the table books
+Execute migrations, this will create needed tables
+sequelize db:migrate
 Execute the seed anytime after 
 sequelize db:seed:all
