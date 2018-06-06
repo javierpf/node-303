@@ -1,5 +1,9 @@
 npm install sequelize-cli -g
+
+
 Modify config.js according to local database
+
+
 {
   "development": {
     "username": "postgres",
@@ -23,9 +27,17 @@ Modify config.js according to local database
     "dialect": "postgres"
   }
 }
+
+
 Execute migrations, this will create needed tables
+
+
 sequelize db:migrate
+
+
 Execute the seed anytime after 
+
+
 sequelize db:seed:all
 
 Server listens on port 3000, try out a GET on localhost:3000/books
