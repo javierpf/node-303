@@ -1,5 +1,4 @@
 npm install sequelize-cli -g
-sequelize init
 Modify config.js according to local database
 {
   "development": {
@@ -26,5 +25,4 @@ Modify config.js according to local database
 }
 Deploy application for the first time, it will create the table books
 Execute the seed anytime after 
-
 sequelize db:seed:all

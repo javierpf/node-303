@@ -13,12 +13,12 @@ const options = {
 const client = new Sequelize(dbName, username, password, options);
 const models = {};
 
-fs.readdirSync(`${__dirname}/../models`)
+fs.readdirSync(`${__dirname}/../../models`)
   .filter((file) => {
     return file.indexOf('.') !== 0 && file !== 'index.js';
   })
   .forEach((file) => {
-    const model = client.import(path.join(`${__dirname}/../models`, file));
+    const model = client.import(path.join(`${__dirname}/../../models`, file));
     models[model.name] = model;
   });
 
